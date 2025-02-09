@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e6c13ad2.css",
+    "main.js": "/static/js/main.a95458cc.js",
+    "static/media/misha.png": "/static/media/misha.42ee41f5918b891e07cf.png",
+    "static/media/roma.png": "/static/media/roma.a8bfe56876010bd1509a.png",
+    "static/media/vova.png": "/static/media/vova.daf9409f215291587f57.png",
+    "static/media/Rostov.ttf": "/static/media/Rostov.f74e6a0a9605f693437c.ttf",
+    "static/media/logo.PNG": "/static/media/logo.728d648c4007c9829ad7.PNG",
+    "index.html": "/index.html",
+    "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
+    "main.a95458cc.js.map": "/static/js/main.a95458cc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.a95458cc.js"
+  ]
+}
