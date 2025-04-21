@@ -9,6 +9,7 @@ import Coaches from './pages/Coaches';
 import Contacts from './pages/Contacts';
 import PhotoGallery from './pages/PhotoGallery';
 import { GlobalStyles } from './theme/globalStyles';
+import MemberDetail from './components/MemberDetail';
 
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
                 <Route path="/" element={<Home/>}/>
                 <Route path="/about" element={<About/>}/>
                 <Route path="/training" element={<Training/>}/>
-                <Route path="/team" element={<Team/>}/>
+                <Route path="/team" element={<Team />} />
+                <Route path="/team/:id" element={<MemberDetail />} />
                 <Route path="/coaches" element={<Coaches/>}/>
                 <Route path="/contacts" element={<Contacts/>}/>
                 <Route path="/gallery" element={<PhotoGallery/>}/>

@@ -1,8 +1,9 @@
+// src/components/Team.js
+import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { theme } from '../theme';
-import vovaPhoto from '../images/vova.png';
-import mishaPhoto from '../images/misha.png';
-import romaPhoto from '../images/roma.png';
+import { members } from '../data/members';
 
 const TeamContainer = styled.div`
   padding: 2rem;
@@ -23,6 +24,12 @@ const MemberCard = styled.div`
   border-radius: ${theme.radii.md};
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  }
 `;
 
 const MemberImage = styled.img`
@@ -33,19 +40,28 @@ const MemberImage = styled.img`
   margin-bottom: 1rem;
 `;
 
-export default function Team() {
-    const members = [
-        { name: 'Михаил Игушкин', role: 'Старший тренер (Санкт-Петербург)', bio: 'На опыте и без депресии', image:mishaPhoto },
-        { name: 'Роман Фронтов', role: '', bio: 'Старый, но не бесполезный', image:romaPhoto },
-        { name: 'Владимир Шаприцкий', role: 'Тренер (Москва)', bio: 'Молодой, горячий', image:vovaPhoto },
-    ];
+const ProfileLink = styled(Link)`
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: ${theme.colors.primary};
+  color: white;
+  text-decoration: none;
+  border-radius: ${theme.radii.sm};
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background-color: ${theme.colors.primaryDark};
+  }
+`;
 
+export default function Team() {
     return (
         <TeamContainer>
             <h2>Наша Команда</h2>
             <MemberGrid>
-                {members.map((member, index) => (
-                    <MemberCard key={index}>
+                {members.map((member) => (
+                    <MemberCard key={member.id}>
                         <MemberImage
                             src={member.image}
                             alt={member.name}
@@ -53,6 +69,9 @@ export default function Team() {
                         <h3>{member.name}</h3>
                         <p><strong>{member.role}</strong></p>
                         <p>{member.bio}</p>
+                        <ProfileLink to={`/team/${member.id}`}>
+                            Подробнее
+                        </ProfileLink>
                     </MemberCard>
                 ))}
             </MemberGrid>
